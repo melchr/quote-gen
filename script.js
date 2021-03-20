@@ -11,7 +11,11 @@ async function getQuote() {
     try {
         const response = await fetch(proxyUrl + apiUrl)
         const data = await response.json()
-        authorText.innerText = data.quoteAuthor
+        if (data.quoteAuthor === '') {
+            authorText.innerText = 'Unknown'
+        } else {
+            authorText.innerText = data.quoteAuthor
+        }
         quoteText.innerText = data.quoteText
     } catch (error) {
         getQuote()
