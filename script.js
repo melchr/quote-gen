@@ -16,6 +16,11 @@ async function getQuote() {
         } else {
             authorText.innerText = data.quoteAuthor
         }
+        if (data.quoteText.length > 50) {
+            quoteText.classList.add('long-quote')
+        } else {
+            quoteText.classList.remove('long-quote')
+        }
         quoteText.innerText = data.quoteText
     } catch (error) {
         getQuote()
