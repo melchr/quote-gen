@@ -3,6 +3,13 @@ const quoteText = document.getElementById('quote')
 const authorText = document.getElementById('author')
 const twitterBtn = document.getElementById('twitter')
 const newQuoteBtn = document.getElementById('new-quote')
+const loader = document.getElementById('loader')
+
+// show loader
+function loading() {
+    loader.hidden = false
+    quoteContainer.hidden = true
+}
 
 // get quote from api
 async function getQuote() {
@@ -34,7 +41,7 @@ function tweetQuote() {
     window.open(twitterUrl, '_blank')
 }
 
-//Event Listener
+//Event listeners
 newQuoteBtn.addEventListener('click', getQuote)
 twitterBtn.addEventListener('click', tweetQuote)
 
