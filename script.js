@@ -11,6 +11,14 @@ function loading() {
     quoteContainer.hidden = true
 }
 
+//hide loader
+function complete() {
+    if (!loader.hidden) {
+        quoteContainer.hidden = false
+        loader.hidden = true
+    }
+}
+
 // get quote from api
 async function getQuote() {
     const proxyUrl = 'https://cors-anywhere.herokuapp.com/'
